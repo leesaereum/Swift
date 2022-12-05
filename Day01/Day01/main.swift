@@ -17,9 +17,15 @@ import Foundation
  *첫 글자를 숫자나 특수문자로 시작하면 안되나 _(underbar)는 사용가능
  (* underbar의 용도는 따로 존재함)
  */
+func guardInFunc (string: String?) {
+    guard string != nil
+    else {
+        print("멈춤")
+        return }
+      //nil 입력을 가드한다는 뜻
+        //nil이면 else절을 수행하여 return으로 아래 명령이 실행되지 않는다.
+    print(string!, "second param", separator: "")
+}
 
-// 상수를 이용한 출력
-let message = "안녕하세요"
-//message = "Good morning"
-print(message)
-print(message)
+guardInFunc(string:"test")
+guardInFunc(string:nil)
